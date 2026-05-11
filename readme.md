@@ -4,15 +4,63 @@
 
 Esta prática demonstra uma arquitetura baseada em eventos utilizando:
 
-* Apache Kafka
-* Funções Serverless (FaaS)
-* Docker Compose
-* Node.js
-* Processamento assíncrono
-* Pipeline de eventos
-* Validação antifraude
+* Apache Kafka, Funções Serverless (FaaS), Docker Compose
+* Node.js, Processamento assíncrono e Pipeline de eventos
 
 A proposta é simular um fluxo real de processamento de pedidos de e-commerce.
+
+---
+
+# Pré-requisitos
+
+* Docker Desktop
+* Docker Compose
+
+---
+
+# Executando o Projeto
+
+## 1. Clonar o projeto
+
+```bash
+git clone <repositorio>
+```
+
+---
+
+## 2. Entrar na pasta
+
+```bash
+cd kafka-serverless-order-processing
+```
+
+---
+
+## 3. Subir containers
+
+```bash
+docker compose up --build
+```
+
+---
+
+# Limpando Ambiente
+
+Caso ocorram erros de cache ou mensagens antigas:
+
+```bash
+docker compose down -v
+```
+
+```bash
+docker system prune -af
+```
+
+Depois execute novamente:
+
+```bash
+docker compose up --build
+```
 
 ---
 
@@ -116,18 +164,6 @@ Serviço responsável por:
 
 ---
 
-# Tecnologias Utilizadas
-
-* Node.js
-* Express
-* KafkaJS
-* Apache Kafka
-* Docker
-* Docker Compose
-* cpf-cnpj-validator
-
----
-
 # Estrutura do Projeto
 
 ```text
@@ -156,56 +192,15 @@ Serviço responsável por:
 
 ---
 
-# Pré-requisitos
+# Tecnologias Utilizadas
 
-* Docker Desktop
+* Node.js
+* Express
+* KafkaJS
+* Apache Kafka
+* Docker
 * Docker Compose
-
----
-
-# Executando o Projeto
-
-## 1. Clonar o projeto
-
-```bash
-git clone <repositorio>
-```
-
----
-
-## 2. Entrar na pasta
-
-```bash
-cd openFaas
-```
-
----
-
-## 3. Subir containers
-
-```bash
-docker compose up --build
-```
-
----
-
-# Limpando Ambiente
-
-Caso ocorram erros de cache ou mensagens antigas:
-
-```bash
-docker compose down -v
-```
-
-```bash
-docker system prune -af
-```
-
-Depois execute novamente:
-
-```bash
-docker compose up --build
-```
+* cpf-cnpj-validator
 
 ---
 
@@ -258,54 +253,6 @@ Exemplo:
 ```text
 TOPICO: pedidos-aprovados
 ```
-
----
-
-# Conceitos Demonstrados
-
-## Arquitetura Event-Driven
-
-Comunicação assíncrona baseada em eventos.
-
----
-
-## FaaS (Function as a Service)
-
-Execução de regras de negócio através de funções independentes.
-
----
-
-## Microsserviços
-
-Separação de responsabilidades em múltiplos serviços.
-
----
-
-## Streaming de Eventos
-
-Kafka distribuindo mensagens entre serviços.
-
----
-
-## Desacoplamento
-
-Serviços independentes comunicando-se via eventos.
-
----
-
-# Possíveis Evoluções
-
-* Persistência em PostgreSQL
-* Retry automático
-* Dead Letter Queue (DLQ)
-* Kafka UI
-* Prometheus
-* Grafana
-* API Gateway
-* Autenticação
-* Escalabilidade horizontal
-* OpenFaaS real com Kubernetes
-
 ---
 
 # Exemplo de Pedido
@@ -340,19 +287,18 @@ Serviços independentes comunicando-se via eventos.
 
 ---
 
-# Objetivos Didáticos
+# Possíveis Evoluções
 
-Ao final da prática, os alunos deverão compreender:
-
-* conceitos de Event-Driven Architecture
-* comunicação assíncrona
-* uso de Kafka
-* funções serverless
-* pipelines de eventos
-* processamento distribuído
-* validação de regras de negócio
-* microsserviços
-* desacoplamento entre serviços
+* Persistência em PostgreSQL
+* Retry automático
+* Dead Letter Queue (DLQ)
+* Kafka UI
+* Prometheus
+* Grafana
+* API Gateway
+* Autenticação
+* Escalabilidade horizontal
+* OpenFaaS real com Kubernetes
 
 ---
 
